@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title></title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" rel="stylesheet"></link>
+  <link th:href="@{/img/favicon.png}" rel="icon">
+  <link th:href="@{/img/apple-touch-icon.png}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+ <!--<link rel="stylesheet" th:src="@{resources/static/vendor/bootstrap/css/bootstrap.min.css}">-->
+  <link th:src="@{/vendor/icofont/icofont.min.css}" rel="stylesheet">
+  <link th:src="@{/vendor/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+  <link th:src="@{/vendor/ionicons/css/ionicons.min.css}" rel="stylesheet">
+  <link th:src="@{/vendor/animate.css/animate.min.css}" rel="stylesheet">
+  <link th:src="@{/vendor/venobox/venobox.css}" rel="stylesheet">
+  <link th:src="@{/vendor/owl.carousel/assets/owl.carousel.min.css}" rel="stylesheet">
+  <link th:src="@{/vendor/aos/aos.css}" rel="stylesheet">
+	
+  <!-- Template Main CSS File -->
+  <link th:src="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+  <header th:fragment="header" id="header" >
+   <!-- <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-11 d-flex align-items-center">
+          
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			  <a class="navbar-brand" href="#">TUCHAMBA</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  <form class="form-inline my-2 my-lg-0">
+			      <input class="form-control mr-sm-0" type="search" placeholder="Search" aria-label="Search">
+			      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			    </form>
+			    <ul class="navbar-nav mr-auto ">
+			      <li class="nav-item active">
+			        <a class="text-light nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="text-light nav-link" href="#">Acerca de Nosotros</a>
+			      </li>
+			      <li class="nav-item dropdown">
+			        <a class="text-light nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Servicios
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			          <a class="dropdown-item" href="#">Oficios</a>
+			          <a class="dropdown-item" href="#">Profesionales</a>
+			          <div class="dropdown-divider"></div>
+			          <a class="dropdown-item" href="#">Tecnicos</a>
+			        </div>
+			      </li>
+			      <li class="nav-item">
+			         <a class="text-light nav-link" href="#">Preguntas Frecuentes <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+	              		<button type ="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modalLRForm">INGRESAR</button>	
+	              </li>
+
+			    </ul>
+			  </div>
+			</nav>         
+    <!--    </div>
+      </div>
+
+    </div>-->
+    
+  </header> End Header -->
+  <div th:fragment="modalLogin">
+      <div class="modal fade " id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" z-index=>
+            <div class="modal-dialog  " role="document">
+                <!--Content-->
+                <div class="modal-content ">
+
+                    <!--Modal cascading tabs-->
+                    <div class="modal-content shadow-lg">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs  table-info " role="tablist">
+                            <li class="nav-item ">
+                                <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i>
+                                    Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i>
+                                    Registro</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panels -->
+                        <div class="tab-content ">
+                            <!--Panel 7-->
+                            <div class="tab-pane fade  show active " id="panel7" role="tabpanel">
+
+                                <!--Body-->
+
+
+                                <form th:action="@{/login}" method="post">
+                                    <div class="modal-body mb-1 mt-5">
+                                        <div class="mb-4 mx-md-5">
+                                            <h4>Iniciar sesión</h4>
+                                        </div>
+
+
+                                        <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">
+                                                <div class="input-group-prepend">
+
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-envelope "></i></span>
+                                                </div>
+                                                <input type="text"  class="form-control form-control-sm"
+                                                       placeholder="Usuario" name="username" id="username" required>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-lock mr-1"></i></span>
+                                                </div>
+                                                <input type="password"  class="form-control form-control-sm"
+                                                       placeholder="Contraseña" name="password" id="password" required>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="text-center mt-2">
+
+
+                                            <input class="btn btn-primary" type="submit" value="Ingresar" name="accion" >
+                                         <!--     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                                <!--Footer-->
+                                <div class="modal-footer">
+                                    <div class="text-center text-md-right mt-1">
+
+
+                                        <p>¿No estás registrado? <a data-toggle="tab" href="#panel8" class="card-link" role="tab">
+                                                Regístrese</a></p>
+
+
+                                        <!--<p>¿Olvidó su<a href="#" class="card-link"> contraseña?</a></p>-->
+                                    </div>
+                                    <button type="button" class="btn btn-outline-info  ml-auto" data-dismiss="modal">Cerrar</button>
+
+
+                                </div>
+
+                            </div>
+
+                            <!--/.Panel 7-->
+
+                            <!--------------------------------------------------------Panel 8 FORMMULARIO DE REGISTRO------------------------------------------>
+                            <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                                <!--Body-->
+
+
+                                <div class="modal-body mb-1 mt-5">
+
+                                    <form th:action="@/{registro}" method="get" th:object="${user}" >
+                                        <div class="mb-4 mx-md-5">
+                                            <h4>Ingrese sus datos</h4>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-user"></i></span>
+                                                </div>
+                                                <input type="text" th:field="*{usuario}"id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="Usuario" name="usuario"required>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-lock mr-1"></i></span>
+                                                </div>
+                                                <input type="password" th:field="*{contraseña}" id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="Contraseña" name="pass" required>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-user "></i></span>
+                                                </div>
+                                                <input type="text" th:field="*{nombre}"id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="Nombre" name="nombre" required>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">
+                                                <div class="input-group-prepend">
+
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-user "></i></span>
+                                                </div>
+                                                <input type="text" th:field="*{apellido}" id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="Apellido" name="apellido" required>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">     
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-envelope "></i></span>
+                                                </div>
+                                                <input type="email" th:field="*{email}" id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="E-mail" name="correo" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">     
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-user-plus"></i></span>
+                                                </div>
+                                                <input type="number" th:field="*{celular}" id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="Celular" name="celular" required>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">     
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-user-plus"></i></span>
+                                                </div>
+                                                <input type="number" th:field="*{dni}" id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="DNI" name="dni" required>
+
+                                            </div>
+                                        </div>
+    
+                                       <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">
+                                                <div class="input-group-prepend">
+
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-user "></i></span>
+                                                </div>
+                                                <input type="text" th:field="*{direccion}" id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="Direccion" name="direccion" required>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="input-group mb-4 mx-md-5 shadow-sm">
+                                                <div class="input-group-prepend">
+
+                                                    <span class="input-group-text bg-info badge-dark"><i class="fa fa-user "></i></span>
+                                                </div>
+                                                <input type="text" th:field="*{distrito}" id="modalLRInput11" class="form-control form-control-sm"
+                                                       placeholder="Distrito" name="distrito" required>
+
+                                            </div>
+                                        </div>
+                                            <div class="row" >
+                                             <div class="col-4 input-group mb-4 mr-md-5">     
+                                                <div class="input-group-prepend">
+
+                                                </div>
+                                                <input type="radio" id="radioMujer" name ="sexo" class="form-control-sm"
+                                                       value="F" required>
+                                                <label class="form-check-label ml-1 " for="radioMujer">Mujer</label>
+                                            </div>
+                                            <div class="col-5 input-group mb-4 ml-5 md-3 pl-0">     
+                                                <div class="input-group-prepend">
+
+                                                </div>
+                                                <input type="radio" id="radioHombre" name="sexo" class="form-control-sm ml-1"
+                                                       value="M" required>
+                                                <label class="form-check-label ml-1" for="radioHombre">Hombre</label>
+                                            </div>
+                                            <span th:utext="${sucessMessage}"> </span>
+                                            <div class="alert alert-success alert-dismissible col-4 mr-md-5" 
+                                            th:if="${(bindingResult != null && bindingResult.getAllErrors()!= null)}">
+                                            	<button type="button"  class="close" data-dismiss="alert" aria-hidden="true">
+                                            	</button>
+                                            	<ul th:each="data : ${bindingResult.getAllErrors()}">
+                                            	<li th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>
+                                            	</ul>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="text-center form-sm mt-2">
+                                            <input type="submit" class="btn btn-primary" value="Registrate">
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <!--Footer-->
+                                <div class="modal-footer">
+                                    <div class="options text-right">
+
+
+
+                                        <!--<p >¿Ya tienes cuenta? <a href="#panel7" data-toggle="tab" role="tab" class="blue-text">Inicia sesión</a></p>-->
+                                    </div>
+                                    <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                            data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                            <!--/.Panel 8-->
+                        </div>
+
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+   	</div> 
+  </div>
+  <div>
+  
+  </div>
+  <footer th:fragment="footer">
+  <script src="https://kit.fontawesome.com/b21ff71d42.js" crossorigin="anonymous"></script>
+  <script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </footer>
+  <!-- Vendor JS Files -->
+  
+</body>
+
+</html>
